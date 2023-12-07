@@ -1,0 +1,108 @@
+﻿@page "/"
+@using Azure;
+@using Azure.AI.Vision.Common;
+@using Azure.AI.Vision.ImageAnalysis;
+@using System;
+@using System.IO;
+@using System.Threading.Tasks;
+@using Azure.AI.OpenAI;
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<h1>Computer Vision</h1>
+
+
+<p> Insert URL or type prompt: </p>
+
+<textarea @bind="urlOrPrompt" rows="1" cols="50"
+    placeholder="Enter URL to analzye or prompt text to generate image."></textarea>
+<button @onclick="AnalyzeImage">Analyze Image</button>
+<button @onclick="GenerateImage">Generate Image</button>
+<img src="@imageUrl" alt="Image to analyze" width="300" height="300"/>
+
+<p>@captionFromAnalysis</p>
+
+
+@code
+{
+    string urlOrPrompt = "";
+    Uri imageUrl = new Uri("https://placehold.it/300x300");
+    string captionFromAnalysis = "";
+
+    void AnalyzeImage()
+    {
+
+        var serviceOptions = new VisionServiceOptions(
+        Environment.GetEnvironmentVariable("VISION_ENDPOINT"),
+        new AzureKeyCredential(Environment.GetEnvironmentVariable("VISION_KEY")));
+        // if keys are not set in environment variables, display in UI that environtment variables dont exist
+       
+
+        using var imageSource = VisionSource.FromUrl(
+        new Uri(urlOrPrompt));
+        imageUrl = new Uri(urlOrPrompt);
+
+        var analysisOptions = new ImageAnalysisOptions()
+            {
+                Features =
+            ImageAnalysisFeature.CropSuggestions
+            | ImageAnalysisFeature.Caption
+        
+            };
+
+        using var analyzer = new ImageAnalyzer(serviceOptions, imageSource, analysisOptions);
+
+        var result = analyzer.Analyze();
+
+        if (result.Reason == ImageAnalysisResultReason.Analyzed)
+{
+    Console.WriteLine($" Image height = {result.ImageHeight}");
+    Console.WriteLine($" Image width = {result.ImageWidth}");
+    Console.WriteLine($" Model version = {result.ModelVersion}");
+
+    if (result.Caption != null)
+    {
+        Console.WriteLine(" Caption:");
+        Console.WriteLine($"   \"{result.Caption.Content}\", Confidence {result.Caption.Confidence:0.0000}");
+        captionFromAnalysis = result.Caption.Content;
+    }
+
+ 
+}
+else
+{
+    var errorDetails = ImageAnalysisErrorDetails.FromResult(result);
+    Console.WriteLine(" Analysis failed.");
+    Console.WriteLine($"   Error reason : {errorDetails.Reason}");
+    Console.WriteLine($"   Error code : {errorDetails.ErrorCode}");
+    Console.WriteLine($"   Error message: {errorDetails.Message}");
+}
+
+        
+
+
+    }
+    async void GenerateImage()
+    {
+        string endpoint = Environment.GetEnvironmentVariable("OPENAI_ENDPOINT");
+            string key = Environment.GetEnvironmentVariable("OPENAI_KEY");
+
+            OpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
+
+            Response<ImageGenerations> imageGenerations = await client.GetImageGenerationsAsync(
+                new ImageGenerationOptions()
+                {
+                    Prompt = urlOrPrompt,
+                    Size = ImageSize.Size256x256,
+                });
+
+            // Image Generations responses provide URLs you can use to retrieve requested images
+            Uri imageUri = imageGenerations.Value.Data[0].Url;
+            imageUrl = imageUri;
+            StateHasChanged();
+            // Print the image URI to console:
+            Console.WriteLine(imageUri);
+
+    }
+}

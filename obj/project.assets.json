@@ -1,0 +1,821 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Azure.AI.OpenAI/1.0.0-beta.6": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.34.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.AI.OpenAI.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.AI.OpenAI.dll": {}
+        }
+      },
+      "Azure.AI.Vision.Common/0.15.1-beta.1": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.20.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.AI.Vision.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.AI.Vision.Common.dll": {}
+        },
+        "build": {
+          "build/Azure.AI.Vision.Common.props": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libAzure-AI-Vision-Input-Device.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libAzure-AI-Vision-Input-File.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libAzure-AI-Vision-Native.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libVision_Core.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libVision_Media.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libVision_Media_VideoIngester.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavcodec.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavcodec.so.58": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavcodec.so.58.35.100": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavdevice.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavdevice.so.58": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavdevice.so.58.5.100": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavfilter.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavfilter.so.7": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavfilter.so.7.40.101": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavformat.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavformat.so.58": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavformat.so.58.20.100": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavutil.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavutil.so.56": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libavutil.so.56.22.100": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libswresample.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libswresample.so.3": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libswresample.so.3.3.100": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libswscale.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libswscale.so.5": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libswscale.so.5.3.100": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/win-ARM64/native/Azure-AI-Vision-Input-Device.dll": {
+            "assetType": "native",
+            "rid": "win-ARM64"
+          },
+          "runtimes/win-ARM64/native/Azure-AI-Vision-Native.dll": {
+            "assetType": "native",
+            "rid": "win-ARM64"
+          },
+          "runtimes/win-x64/native/Azure-AI-Vision-Input-Device.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/Azure-AI-Vision-Input-File.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/Azure-AI-Vision-Native.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/Vision_Core.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/Vision_Media.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/Vision_Media_VideoIngester.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/avcodec-58.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/avdevice-58.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/avfilter-7.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/avformat-58.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/avutil-56.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/swresample-3.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/swscale-5.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/turbojpeg.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "Azure.AI.Vision.ImageAnalysis/0.15.1-beta.1": {
+        "type": "package",
+        "dependencies": {
+          "Azure.AI.Vision.Common": "[0.15.1-beta.1]",
+          "Azure.Core": "1.20.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.AI.Vision.ImageAnalysis.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.AI.Vision.ImageAnalysis.dll": {}
+        },
+        "build": {
+          "build/Azure.AI.Vision.ImageAnalysis.props": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libAzure-AI-Vision-Extension-Image.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/win-x64/native/Azure-AI-Vision-Extension-Image.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "Azure.Core/1.34.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
+          "System.Diagnostics.DiagnosticSource": "6.0.1",
+          "System.Memory.Data": "1.0.2",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.7.2",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "compile": {
+          "lib/net6.0/Azure.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Azure.Core.dll": {}
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Memory.Data/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "build": {
+          "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "System.Text.Encodings.Web/4.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "System.Text.Json/4.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Json.dll": {}
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.4": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Azure.AI.OpenAI/1.0.0-beta.6": {
+      "sha512": "B4M3OaXDXoIqjl2W7nmTNMvTkL2Y5qhN7LU7kKEnwifxQdjcwCqw9LEKG4xr8+wge/S2X/ncPZ+bThAdyEgnCQ==",
+      "type": "package",
+      "path": "azure.ai.openai/1.0.0-beta.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.ai.openai.1.0.0-beta.6.nupkg.sha512",
+        "azure.ai.openai.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.AI.OpenAI.dll"
+      ]
+    },
+    "Azure.AI.Vision.Common/0.15.1-beta.1": {
+      "sha512": "2cm1MLo4jVZLHk3WTMNZAtYaeolo7Fsw0XJX0yM3/SyRiQevxgqCRs+/+YY5dbPAF1r+BIvfnxrowKvnfLRGHQ==",
+      "type": "package",
+      "path": "azure.ai.vision.common/0.15.1-beta.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "REDIST.txt",
+        "ThirdPartyNotices.txt",
+        "azure.ai.vision.common.0.15.1-beta.1.nupkg.sha512",
+        "azure.ai.vision.common.nuspec",
+        "build/Azure.AI.Vision.Common.props",
+        "build/native/ARM64/Release/Azure-AI-Vision-Native.lib",
+        "build/native/Azure.AI.Vision.Common.targets",
+        "build/native/include/c_api/azac_api_c_common.h",
+        "build/native/include/c_api/azac_api_c_diagnostics.h",
+        "build/native/include/c_api/azac_api_c_error.h",
+        "build/native/include/c_api/azac_api_c_pal.h",
+        "build/native/include/c_api/azac_debug.h",
+        "build/native/include/c_api/azac_error.h",
+        "build/native/include/cxx_api/azac_api_cxx_common.h",
+        "build/native/include/vision_c_api/CMakeLists.txt",
+        "build/native/include/vision_c_api/azac_api_c_async_op.h",
+        "build/native/include/vision_c_api/azac_api_c_json.h",
+        "build/native/include/vision_c_api/azac_api_c_properties.h",
+        "build/native/include/vision_c_api/azac_api_c_property_bag.h",
+        "build/native/include/vision_c_api/vision_api_c.h",
+        "build/native/include/vision_c_api/vision_api_c_common.h",
+        "build/native/include/vision_c_api/vision_api_c_diagnostics.h",
+        "build/native/include/vision_c_api/vision_api_c_errors.h",
+        "build/native/include/vision_c_api/vision_api_c_event_args.h",
+        "build/native/include/vision_c_api/vision_api_c_frame.h",
+        "build/native/include/vision_c_api/vision_api_c_frame_format.h",
+        "build/native/include/vision_c_api/vision_api_c_frame_reader.h",
+        "build/native/include/vision_c_api/vision_api_c_frame_source.h",
+        "build/native/include/vision_c_api/vision_api_c_frame_writer.h",
+        "build/native/include/vision_c_api/vision_api_c_result.h",
+        "build/native/include/vision_c_api/vision_api_c_session.h",
+        "build/native/include/vision_c_api/vision_api_c_source.h",
+        "build/native/include/vision_cxx_api/core/azac_api_cxx_details_json.hpp",
+        "build/native/include/vision_cxx_api/core/azac_api_cxx_details_lifetime.hpp",
+        "build/native/include/vision_cxx_api/core/azac_api_cxx_details_promise_callback_helper.hpp",
+        "build/native/include/vision_cxx_api/core/azac_api_cxx_details_property_collection.hpp",
+        "build/native/include/vision_cxx_api/core/azac_api_cxx_details_string_helpers.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_common.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_console_logger.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_core.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_details_event_args_base.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_details_recognizer_base.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_details_result_base.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_details_result_event_args_base.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_details_session_error_details.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_details_session_event_args_base.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_details_session_stopped_details.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_details_session_stopped_event_args_base.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_embedded_options.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_event_logger.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_event_signal.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_file_logger.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frame.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frame_format.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frame_format_properties.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frame_properties.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frame_reader.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frame_source.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frame_source_properties.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frame_writer.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frameset_format.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frameset_format_properties.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frameset_reader.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frameset_source.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frameset_source_properties.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_frameset_writer.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_image_source_buffer.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_image_writer.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_log_level.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_memory_logger.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_nullable.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_samples.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_service_advanced_options.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_service_options.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_options.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_properties.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_recognizer.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_result.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_result_event_args.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_result_properties.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_result_reason.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_started_event_args.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_stopped_details.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_stopped_error_details.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_stopped_error_reason.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_stopped_event_args.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_session_stopped_reason.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_source.hpp",
+        "build/native/include/vision_cxx_api/core/vision_api_cxx_source_properties.hpp",
+        "build/native/uap/x64/Release/Azure-AI-Vision-Native.lib",
+        "build/native/x64/Release/Azure-AI-Vision-Native.lib",
+        "lib/netstandard2.0/Azure.AI.Vision.Common.dll",
+        "runtimes/linux-x64/native/libAzure-AI-Vision-Input-Device.so",
+        "runtimes/linux-x64/native/libAzure-AI-Vision-Input-File.so",
+        "runtimes/linux-x64/native/libAzure-AI-Vision-Native.so",
+        "runtimes/linux-x64/native/libVision_Core.so",
+        "runtimes/linux-x64/native/libVision_Media.so",
+        "runtimes/linux-x64/native/libVision_Media_VideoIngester.so",
+        "runtimes/linux-x64/native/libavcodec.so",
+        "runtimes/linux-x64/native/libavcodec.so.58",
+        "runtimes/linux-x64/native/libavcodec.so.58.35.100",
+        "runtimes/linux-x64/native/libavdevice.so",
+        "runtimes/linux-x64/native/libavdevice.so.58",
+        "runtimes/linux-x64/native/libavdevice.so.58.5.100",
+        "runtimes/linux-x64/native/libavfilter.so",
+        "runtimes/linux-x64/native/libavfilter.so.7",
+        "runtimes/linux-x64/native/libavfilter.so.7.40.101",
+        "runtimes/linux-x64/native/libavformat.so",
+        "runtimes/linux-x64/native/libavformat.so.58",
+        "runtimes/linux-x64/native/libavformat.so.58.20.100",
+        "runtimes/linux-x64/native/libavutil.so",
+        "runtimes/linux-x64/native/libavutil.so.56",
+        "runtimes/linux-x64/native/libavutil.so.56.22.100",
+        "runtimes/linux-x64/native/libswresample.so",
+        "runtimes/linux-x64/native/libswresample.so.3",
+        "runtimes/linux-x64/native/libswresample.so.3.3.100",
+        "runtimes/linux-x64/native/libswscale.so",
+        "runtimes/linux-x64/native/libswscale.so.5",
+        "runtimes/linux-x64/native/libswscale.so.5.3.100",
+        "runtimes/win-ARM64/native/Azure-AI-Vision-Input-Device.dll",
+        "runtimes/win-ARM64/native/Azure-AI-Vision-Native.dll",
+        "runtimes/win-x64/native/Azure-AI-Vision-Input-Device.dll",
+        "runtimes/win-x64/native/Azure-AI-Vision-Input-File.dll",
+        "runtimes/win-x64/native/Azure-AI-Vision-Native.dll",
+        "runtimes/win-x64/native/Vision_Core.dll",
+        "runtimes/win-x64/native/Vision_Media.dll",
+        "runtimes/win-x64/native/Vision_Media_VideoIngester.dll",
+        "runtimes/win-x64/native/avcodec-58.dll",
+        "runtimes/win-x64/native/avdevice-58.dll",
+        "runtimes/win-x64/native/avfilter-7.dll",
+        "runtimes/win-x64/native/avformat-58.dll",
+        "runtimes/win-x64/native/avutil-56.dll",
+        "runtimes/win-x64/native/swresample-3.dll",
+        "runtimes/win-x64/native/swscale-5.dll",
+        "runtimes/win-x64/native/turbojpeg.dll",
+        "runtimes/win-x64/nativeassets/uap/Azure-AI-Vision-Native.dll"
+      ]
+    },
+    "Azure.AI.Vision.ImageAnalysis/0.15.1-beta.1": {
+      "sha512": "CLU1Le8DrtAnmKSs1pBnxVBuUScSVPvtoKj0THTg/wdieEkb3vCD4GSqAt+VGJKwF5TF1+f5ALLkrDD44G7tVQ==",
+      "type": "package",
+      "path": "azure.ai.vision.imageanalysis/0.15.1-beta.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "REDIST.txt",
+        "ThirdPartyNotices.txt",
+        "azure.ai.vision.imageanalysis.0.15.1-beta.1.nupkg.sha512",
+        "azure.ai.vision.imageanalysis.nuspec",
+        "build/Azure.AI.Vision.ImageAnalysis.props",
+        "build/native/Azure.AI.Vision.ImageAnalysis.targets",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_core_result_reason.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_core_stop_reason.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_error_details.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_error_reason.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_event_args.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_options.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_result.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_result_details.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_result_properties.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analysis_result_reason.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analyzer.hpp",
+        "build/native/include/vision_cxx_api/image_analyzer/vision_api_cxx_image_analyzer_properties.hpp",
+        "lib/netstandard2.0/Azure.AI.Vision.ImageAnalysis.dll",
+        "runtimes/linux-x64/native/libAzure-AI-Vision-Extension-Image.so",
+        "runtimes/win-x64/native/Azure-AI-Vision-Extension-Image.dll",
+        "runtimes/win-x64/nativeassets/uap/Azure-AI-Vision-Extension-Image.dll"
+      ]
+    },
+    "Azure.Core/1.34.0": {
+      "sha512": "6dNpM8OlGO+5gvt97tHXBp9qWRFkimRFulupDSGRgyT3sje1kQNza1/EMYaDcolmNARPmVJo8+wgD6ReV9wG5Q==",
+      "type": "package",
+      "path": "azure.core/1.34.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.core.1.34.0.nupkg.sha512",
+        "azure.core.nuspec",
+        "azureicon.png",
+        "lib/net461/Azure.Core.dll",
+        "lib/net5.0/Azure.Core.dll",
+        "lib/net6.0/Azure.Core.dll",
+        "lib/netcoreapp2.1/Azure.Core.dll",
+        "lib/netstandard2.0/Azure.Core.dll"
+      ]
+    },
+    "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
+      "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "ref/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Diagnostics.DiagnosticSource/6.0.1": {
+      "sha512": "KiLYDu2k2J82Q9BJpWiuQqCkFjRBWVq4jDzKKWawVi9KWzyD0XG3cmfX0vqTQlL14Wi9EufJrbL0+KCLTbqWiQ==",
+      "type": "package",
+      "path": "system.diagnostics.diagnosticsource/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Diagnostics.DiagnosticSource.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net5.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/net6.0/System.Diagnostics.DiagnosticSource.dll",
+        "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll",
+        "system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Memory.Data/1.0.2": {
+      "sha512": "JGkzeqgBsiZwKJZ1IxPNsDFZDhUvuEdX8L8BDC8N3KOj+6zMcNU28CNN59TpZE/VJYy9cP+5M+sbxtWJx3/xtw==",
+      "type": "package",
+      "path": "system.memory.data/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "DotNetPackageIcon.png",
+        "README.md",
+        "lib/net461/System.Memory.Data.dll",
+        "lib/netstandard2.0/System.Memory.Data.dll",
+        "system.memory.data.1.0.2.nupkg.sha512",
+        "system.memory.data.nuspec"
+      ]
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "type": "package",
+      "path": "system.numerics.vectors/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Numerics.Vectors.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.Numerics.Vectors.dll",
+        "ref/net46/System.Numerics.Vectors.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Numerics.Vectors.dll",
+        "ref/netstandard2.0/System.Numerics.Vectors.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.numerics.vectors.4.5.0.nupkg.sha512",
+        "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+      "sha512": "/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.targets",
+        "buildTransitive/netcoreapp3.1/_._",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Text.Encodings.Web/4.7.2": {
+      "sha512": "iTUgB/WtrZ1sWZs84F2hwyQhiRH6QNjQv2DkwrH+WP6RoFga2Q1m3f9/Q7FG8cck8AdHitQkmkXSY8qylcDmuA==",
+      "type": "package",
+      "path": "system.text.encodings.web/4.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Encodings.Web.dll",
+        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.1/System.Text.Encodings.Web.dll",
+        "system.text.encodings.web.4.7.2.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Text.Json/4.7.2": {
+      "sha512": "TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
+      "type": "package",
+      "path": "system.text.json/4.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "system.text.json.4.7.2.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "type": "package",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Threading.Tasks.Extensions.dll",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Azure.AI.OpenAI >= 1.0.0-beta.6",
+      "Azure.AI.Vision.ImageAnalysis >= 0.15.1-beta.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\gwyne\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\gwyne\\Documents\\cloud-ai-challenge1\\cloud-ai-challenge1.csproj",
+      "projectName": "cloud-ai-challenge1",
+      "projectPath": "C:\\Users\\gwyne\\Documents\\cloud-ai-challenge1\\cloud-ai-challenge1.csproj",
+      "packagesPath": "C:\\Users\\gwyne\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gwyne\\Documents\\cloud-ai-challenge1\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\gwyne\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "Azure.AI.OpenAI": {
+            "target": "Package",
+            "version": "[1.0.0-beta.6, )"
+          },
+          "Azure.AI.Vision.ImageAnalysis": {
+            "target": "Package",
+            "version": "[0.15.1-beta.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
