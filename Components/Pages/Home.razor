@@ -112,7 +112,7 @@
         
         var openAiService = new OpenAI.Managers.OpenAIService(new OpenAiOptions()
             {
-                ApiKey = Environment.GetEnvironmentVariable("MY_OPEN_AI_API_KEY")
+                ApiKey = Environment.GetEnvironmentVariable("OPENAI_KEY")
             });
 
         var imageResult = await openAiService.Image.CreateImage(new OpenAI.ObjectModels.RequestModels.ImageCreateRequest
