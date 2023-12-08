@@ -6,6 +6,7 @@
 @using System.IO;
 @using System.Threading.Tasks;
 @using Azure.AI.OpenAI;
+@using OpenAI;
 @rendermode InteractiveServer
 
 <PageTitle>Home</PageTitle>
@@ -19,7 +20,7 @@
     placeholder="Enter URL to analzye or prompt text to generate image."></textarea>
 <button @onclick="AnalyzeImage">Analyze Image</button>
 <button @onclick="GenerateImage">Generate Image</button>
-<img src="@imageUrl" alt="Image to analyze" width="300" height="300"/>
+<img src="@imageUrl" alt="Image to analyze" width="300" height="300" />
 
 <p>@captionFromAnalysis</p>
 
@@ -37,7 +38,7 @@
         Environment.GetEnvironmentVariable("VISION_ENDPOINT"),
         new AzureKeyCredential(Environment.GetEnvironmentVariable("VISION_KEY")));
         // if keys are not set in environment variables, display in UI that environtment variables dont exist
-       
+
 
         using var imageSource = VisionSource.FromUrl(
         new Uri(urlOrPrompt));
@@ -48,7 +49,7 @@
                 Features =
             ImageAnalysisFeature.CropSuggestions
             | ImageAnalysisFeature.Caption
-        
+
             };
 
         using var analyzer = new ImageAnalyzer(serviceOptions, imageSource, analysisOptions);
@@ -56,53 +57,79 @@
         var result = analyzer.Analyze();
 
         if (result.Reason == ImageAnalysisResultReason.Analyzed)
-{
-    Console.WriteLine($" Image height = {result.ImageHeight}");
-    Console.WriteLine($" Image width = {result.ImageWidth}");
-    Console.WriteLine($" Model version = {result.ModelVersion}");
+        {
+            Console.WriteLine($" Image height = {result.ImageHeight}");
+            Console.WriteLine($" Image width = {result.ImageWidth}");
+            Console.WriteLine($" Model version = {result.ModelVersion}");
 
-    if (result.Caption != null)
-    {
-        Console.WriteLine(" Caption:");
-        Console.WriteLine($"   \"{result.Caption.Content}\", Confidence {result.Caption.Confidence:0.0000}");
-        captionFromAnalysis = result.Caption.Content;
-    }
+            if (result.Caption != null)
+            {
+                Console.WriteLine(" Caption:");
+                Console.WriteLine($" \"{result.Caption.Content}\", Confidence {result.Caption.Confidence:0.0000}");
+                captionFromAnalysis = result.Caption.Content;
+            }
 
- 
-}
-else
-{
-    var errorDetails = ImageAnalysisErrorDetails.FromResult(result);
-    Console.WriteLine(" Analysis failed.");
-    Console.WriteLine($"   Error reason : {errorDetails.Reason}");
-    Console.WriteLine($"   Error code : {errorDetails.ErrorCode}");
-    Console.WriteLine($"   Error message: {errorDetails.Message}");
-}
 
-        
+        }
+        else
+        {
+            var errorDetails = ImageAnalysisErrorDetails.FromResult(result);
+            Console.WriteLine(" Analysis failed.");
+            Console.WriteLine($" Error reason : {errorDetails.Reason}");
+            Console.WriteLine($" Error code : {errorDetails.ErrorCode}");
+            Console.WriteLine($" Error message: {errorDetails.Message}");
+        }
+
+
 
 
     }
     async void GenerateImage()
     {
         string endpoint = Environment.GetEnvironmentVariable("OPENAI_ENDPOINT");
-            string key = Environment.GetEnvironmentVariable("OPENAI_KEY");
+        string key = Environment.GetEnvironmentVariable("OPENAI_KEY");
 
-            OpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
 
-            Response<ImageGenerations> imageGenerations = await client.GetImageGenerationsAsync(
-                new ImageGenerationOptions()
-                {
-                    Prompt = urlOrPrompt,
-                    Size = ImageSize.Size256x256,
-                });
+        // Azure OpenAI version
+        OpenAIClient client = new(new Uri(endpoint), new AzureKeyCredential(key));
 
-            // Image Generations responses provide URLs you can use to retrieve requested images
-            Uri imageUri = imageGenerations.Value.Data[0].Url;
-            imageUrl = imageUri;
+        Response<ImageGenerations> imageGenerations = await client.GetImageGenerationsAsync(
+        new ImageGenerationOptions()
+            {
+                Prompt = urlOrPrompt,
+                Size = ImageSize.Size256x256,
+            });
+
+        // Image Generations responses provide URLs you can use to retrieve requested images
+        Uri imageUri = imageGenerations.Value.Data[0].Url;
+        imageUrl = imageUri;
+        StateHasChanged();
+        // Print the image URI to console:
+        Console.WriteLine(imageUri);
+
+
+        /* OpenAI API version
+        
+        var openAiService = new OpenAI.Managers.OpenAIService(new OpenAiOptions()
+            {
+                ApiKey = Environment.GetEnvironmentVariable("MY_OPEN_AI_API_KEY")
+            });
+
+        var imageResult = await openAiService.Image.CreateImage(new OpenAI.ObjectModels.RequestModels.ImageCreateRequest
+            {
+                Prompt = urlOrPrompt,
+                N = 1,
+                Size = OpenAI.ObjectModels.StaticValues.ImageStatics.Size.Size256,
+                ResponseFormat = OpenAI.ObjectModels.StaticValues.ImageStatics.ResponseFormat.Url,
+                User = "TestUser"
+            });
+
+        if (imageResult.Successful)
+        {
+            Console.WriteLine(string.Join("\n", imageResult.Results.Select(r => r.Url)));
+            imageUrl = new Uri(imageResult.Results[0].Url);
             StateHasChanged();
-            // Print the image URI to console:
-            Console.WriteLine(imageUri);
+        }*/
 
     }
 }
